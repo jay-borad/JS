@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container
+        {
+            height: 650px;
+           
+            position: relative;
+        }
+
+       .leftbutton
+        {
+            font-size: 40px;
+            color: white;
+            background: black;
+            display: inline;
+            padding: 20px 32px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+            top: 300px;
+        }
+
+         .rightbutton
+         {
+            font-size: 40px;
+            color: white;
+            background: black;
+            display: inline;
+            padding: 20px 32px;
+            border-radius: 50%;
+            position: absolute;
+            right: 50px;
+            top: 300px;
+         } 
+
+         .img1, .img2, .img3
+         {
+            height: 700px;
+            transition: 2s;
+         }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRziUyvLfy2GXA6v7rc8fp75baQ70STKs9bgg&s" alt="" width="100%">
+
+        <img class="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBYOUJAfjgMuRoKB9LxksJYO21UMmV6PmX1A&s" alt="" width="100%">
+        
+        <img class="img3" src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=" alt="" width="100%">
+
+        <div class="rightbutton" onclick="sliderNext()">&#62;</div>
+
+        <div class="leftbutton" onclick="sliderPrev()">&#60;</div>
+
+    </div>
+
+    <script>
+
+        let img1 = document.querySelector('.img1');
+        let img2 = document.querySelector('.img2');
+        let img3 = document.querySelector('.img3');
+
+        img1.style.display= 'block';
+        img2.style.display= 'none';
+        img3.style.display= 'none';
+        
+        function sliderNext(){
+
+            if(img1.style.display === 'block'){
+
+                img2.style.display= 'block';
+                img3.style.display= 'none';
+                img1.style.display= 'none';
+
+            } else if (img2.style.display  === 'block'){
+
+                img3.style.display= 'block';
+                img2.style.display= 'none';
+                img1.style.display= 'none';
+            }
+
+            else {
+                img1.style.display= 'block';
+                img2.style.display= 'none';
+                img3.style.display= 'none';
+            }
+
+        }
+
+        function sliderPrev(){
+
+            if(img1.style.display === 'block'){
+
+                img3.style.display= 'block';
+                img2.style.display= 'none';
+                img1.style.display= 'none';
+
+            } else if (img3.style.display  === 'block'){
+
+                img2.style.display= 'block';
+                img3.style.display= 'none';
+                img1.style.display= 'none';
+            }
+
+            else {
+                img1.style.display= 'block';
+                img2.style.display= 'none';
+                img3.style.display= 'none';
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

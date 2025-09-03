@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="return data()" action="jay.html">
+      Name: <input type="text" id="j1" />  <br /><br />
+      Contact:<input type="text" id="j2" />
+      <p id="contact"></p>
+      Password:<input type="password" id="j3" /><br /><br />
+      <input type="submit" />
+    </form>
+
+    <script>
+      function data() {
+        var a = document.getElementById("j1").value;
+        var b = document.getElementById("j2").value;
+        var c = document.getElementById("j3").value;
+
+        // if (a == "" || b == "" || c == "" || d == "") {
+        //   // alert("All Fields Are mendatory");
+        //   // return false;
+        // } else 
+        if (b.length !== 10) {
+          document.getElementById('contact').innerHTML = "Number should be of 10 Digits ! Please enter valid number";
+          return false;
+        } else if (isNaN(b)) {
+          alert("only numbers are allowed ! Please enter valid Number");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
